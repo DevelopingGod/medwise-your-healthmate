@@ -59,15 +59,24 @@ export async function POST(req: Request) {
 
     const systemPrompt = buildSystemPrompt(userProfile)
 
-    const result = await streamText({
-      model: groq('llama-3.3-70b-versatile'),
-      system: systemPrompt,
-      messages: coreMessages,
-      temperature: 0.3,
-      maxOutputTokens: 1024,
-    })
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 25000)
 
-    return result.toTextStreamResponse()
+    try {
+      const result = await streamText({
+        model: groq('llama-3.3-70b-versatile'),
+        system: systemPrompt,
+        messages: coreMessages,
+        temperature: 0.3,
+        maxOutputTokens: 1024,
+        abortSignal: controller.signal,
+      })
+      clearTimeout(timeoutId)
+      return result.toTextStreamResponse()
+    } catch (error) {
+      clearTimeout(timeoutId)
+      throw error
+    }
 
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown error'

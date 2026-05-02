@@ -57,8 +57,8 @@ export default function ChatPage() {
   const userProfileRef = useRef<UserProfile | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const isUserScrollingRef = useRef(false)
-  const lastScrollTopRef = useRef(0)
+  const shouldAutoScrollRef = useRef(true)
+  const lastMessageIdRef = useRef<string>('')
   const [thinkingIndex, setThinkingIndex] = useState(0)
   const thinkingIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -98,25 +98,45 @@ export default function ChatPage() {
     }
   }, [messages])
 
-  // Detect when user manually scrolls up — pause auto-scroll
+  // Keep userProfileRef in sync with state so transport always sends latest profile
+  useEffect(() => {
+    userProfileRef.current = userProfile
+  }, [userProfile])
+
+  // Track whether user is near the bottom — gates auto-scroll
   useEffect(() => {
     const container = scrollContainerRef.current
     if (!container) return
-    const handleScroll = () => {
+    const onScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = container
       const distanceFromBottom = scrollHeight - scrollTop - clientHeight
-      isUserScrollingRef.current = distanceFromBottom > 100
-      lastScrollTopRef.current = scrollTop
+      shouldAutoScrollRef.current = distanceFromBottom < 150
     }
-    container.addEventListener('scroll', handleScroll, { passive: true })
-    return () => container.removeEventListener('scroll', handleScroll)
+    container.addEventListener('scroll', onScroll, { passive: true })
+    return () => container.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Auto-scroll to latest message — skips when user scrolled up
+  // Scroll only when a genuinely NEW message appears (different ID) — never during streaming
   useEffect(() => {
-    if (isUserScrollingRef.current) return
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (messages.length === 0) return
+    const lastMessage = messages[messages.length - 1]
+    if (lastMessage.id !== lastMessageIdRef.current) {
+      lastMessageIdRef.current = lastMessage.id
+      setTimeout(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+    }
+    // Same ID = streaming update to existing message — do nothing
   }, [messages])
+
+  // Lock body scroll only while the chat UI is active (not during intake)
+  useEffect(() => {
+    if (!userProfile) return
+    document.body.classList.add('chat-page-active')
+    return () => {
+      document.body.classList.remove('chat-page-active')
+    }
+  }, [userProfile])
 
   // Rotate thinking messages every 1.8 seconds while loading
   useEffect(() => {
@@ -175,8 +195,30 @@ export default function ChatPage() {
   // ── STATE 1: INTAKE ─────────────────────────────────────────────────────────
   if (!userProfile) {
     return (
-      <div className="pt-16 min-h-screen" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <IntakeForm onSubmit={handleProfileSubmit} />
+      <div
+        style={{
+          minHeight: 'calc(100vh - 64px)',
+          backgroundColor: 'var(--bg-secondary)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '48px 16px',
+        }}
+      >
+        <div style={{ width: '100%', maxWidth: '480px' }}>
+          <IntakeForm onSubmit={handleProfileSubmit} />
+          <p
+            style={{
+              fontSize: '12px',
+              textAlign: 'center',
+              marginTop: '16px',
+              color: 'var(--text-muted)',
+            }}
+          >
+            🔒 Your information is used only for this session and is never stored.
+          </p>
+        </div>
       </div>
     )
   }
@@ -184,8 +226,16 @@ export default function ChatPage() {
   // ── STATE 2: CHAT ────────────────────────────────────────────────────────────
   return (
     <div
-      className="pt-16 flex flex-col h-screen"
-      style={{ backgroundColor: 'var(--bg-primary)' }}
+      style={{
+        position: 'fixed',
+        top: '64px',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: 'var(--bg-secondary)',
+      }}
     >
       {/* Disclaimer — amber bar at top of chat section */}
       <DisclaimerBanner />
@@ -243,11 +293,15 @@ export default function ChatPage() {
         </div>
       )}
 
-      {/* Scrollable messages area */}
+      {/* Scrollable messages area — only scrollable element in the layout */}
       <div
         ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto chat-scroll py-6 px-4"
-        style={{ backgroundColor: 'var(--bg-primary)' }}
+        className="chat-scroll"
+        style={{
+          flex: 1,
+          overflowY: 'auto',
+          padding: '24px 16px',
+        }}
       >
         <div className="max-w-3xl mx-auto space-y-4">
           {messages.map(msg => (

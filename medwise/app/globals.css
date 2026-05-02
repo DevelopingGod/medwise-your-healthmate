@@ -119,6 +119,10 @@
   background-color: #4988C4;
 }
 
+.chat-page-active {
+  overflow: hidden;
+}
+
 @layer utilities {
   .chat-scroll {
     scrollbar-width: thin;
