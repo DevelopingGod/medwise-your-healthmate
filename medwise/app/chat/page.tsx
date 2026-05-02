@@ -75,10 +75,18 @@ export default function ChatPage() {
     transport,
     onError: (error) => {
       console.error('Chat error:', error)
-      setApiError(
-        'MedWise encountered an issue. Please try again. ' +
-        'If this persists, refresh the page.'
-      )
+      const message = error.message ?? ''
+      if (message.includes('Too many requests') || message.includes('429')) {
+        setApiError(
+          '⏱️ You\'re sending messages too fast. ' +
+          'Please wait a moment before trying again.'
+        )
+      } else {
+        setApiError(
+          'MedWise encountered an issue. ' +
+          'Please try again. If this persists, refresh the page.'
+        )
+      }
     },
     onFinish: () => {
       setApiError(null)

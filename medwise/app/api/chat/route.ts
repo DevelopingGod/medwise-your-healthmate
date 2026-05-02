@@ -2,6 +2,7 @@ import { createGroq } from '@ai-sdk/groq'
 import { streamText } from 'ai'
 import type { ModelMessage } from 'ai'
 import { buildSystemPrompt } from '@/lib/systemPrompt'
+import { rateLimit } from '@/lib/rateLimit'
 
 const groq = createGroq({
   apiKey: process.env.GROQ_API_KEY,
@@ -34,6 +35,31 @@ function toCoreMessages(messages: unknown[]): ModelMessage[] {
 }
 
 export async function POST(req: Request) {
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    req.headers.get('x-real-ip') ??
+    'anonymous'
+
+  const { allowed, remaining, resetIn } = rateLimit(ip)
+
+  if (!allowed) {
+    return new Response(
+      JSON.stringify({
+        error: `Too many requests. Please wait ${Math.ceil(resetIn / 1000)} seconds before trying again.`,
+      }),
+      {
+        status: 429,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-RateLimit-Limit': '10',
+          'X-RateLimit-Remaining': '0',
+          'X-RateLimit-Reset': String(Math.ceil(resetIn / 1000)),
+          'Retry-After': String(Math.ceil(resetIn / 1000)),
+        },
+      }
+    )
+  }
+
   let userProfile: import('@/types').UserProfile | null = null
 
   try {
@@ -72,7 +98,15 @@ export async function POST(req: Request) {
         abortSignal: controller.signal,
       })
       clearTimeout(timeoutId)
-      return result.toTextStreamResponse()
+      const response = result.toTextStreamResponse()
+      const newHeaders = new Headers(response.headers)
+      newHeaders.set('X-RateLimit-Limit', '10')
+      newHeaders.set('X-RateLimit-Remaining', String(remaining))
+      newHeaders.set('X-RateLimit-Reset', String(Math.ceil(resetIn / 1000)))
+      return new Response(response.body, {
+        status: response.status,
+        headers: newHeaders,
+      })
     } catch (error) {
       clearTimeout(timeoutId)
       throw error
