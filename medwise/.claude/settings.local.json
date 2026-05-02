@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const pkg = require\\('./node_modules/@ai-sdk/react/package.json'\\); console.log\\(pkg.version, pkg.exports ? Object.keys\\(pkg.exports\\).slice\\(0,5\\) : 'no exports'\\)\")",
+      "Bash(findstr \"ai\")",
+      "Bash(node -e \"const p=require\\('./node_modules/ai/package.json'\\); console.log\\('ai version:', p.version\\); const exp=p.exports||{}; const keys=Object.keys\\(exp\\).filter\\(k=>k.includes\\('react'\\)\\); console.log\\('react exports:', keys\\)\")",
+      "Bash(node -e \"try{const p=require\\('./node_modules/@ai-sdk/react/package.json'\\);console.log\\(p.version\\)}catch\\(e\\){console.log\\('not found'\\)}\")",
+      "Bash(node -e \"const p=require\\('./node_modules/ai/package.json'\\); console.log\\(JSON.stringify\\(Object.keys\\(p.exports||{}\\).slice\\(0,20\\)\\)\\)\")",
+      "Bash(node -e \"const ai = require\\('./node_modules/ai'\\); console.log\\(typeof ai.useChat, Object.keys\\(ai\\).filter\\(k=>k.toLowerCase\\(\\).includes\\('chat'\\)\\).slice\\(0,10\\)\\)\")",
+      "Bash(node -e \"const p=require\\('./node_modules/ai/package.json'\\); console.log\\(JSON.stringify\\(p.exports,null,2\\)\\)\")",
+      "Bash(node -e \"try{const m=require\\('./node_modules/@ai-sdk/react'\\);console.log\\('found',typeof m.useChat\\)}catch\\(e\\){console.log\\('not found'\\)}\")",
+      "Bash(node -e \"const ai=require\\('./node_modules/ai/dist/index.mjs'\\)\")",
+      "Bash(npm install *)",
+      "Bash(node -e \"const r=require\\('./node_modules/@ai-sdk/react/package.json'\\); console.log\\('version:', r.version\\); const m=require\\('./node_modules/@ai-sdk/react'\\); console.log\\('useChat:', typeof m.useChat\\)\")"
+    ]
+  }
+}

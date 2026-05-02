@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MedWise: Your Healthmate</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+
+    <!-- FOR NAVIGATION BAR -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+
+  /* <!-- NAVIGATION BAR STYLES --> */
+  .banner {
+    background-attachment: fixed;
+    background-position: 0;
+    background-size: cover;
+	height:100vh;
+	position:relative;
+	padding:180px 0;
+}
+
+header{
+	position:absolute;
+	width:100%;
+	top:0;
+	z-index:11;
+}
+
+.banner-left h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 50px;
+    text-shadow: 1px 2px #000;
+	margin-bottom:15px;
+}
+
+.banner-left p {
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+	margin-bottom:30px;
+}
+
+.banner-right {
+    padding: 30px;
+    background: #ffffff69;
+    border-radius: 15px;
+    box-shadow: 1px 1px 18px 1px #0000007a;
+}
+
+.custom-btn {
+    width: 100%;
+    background: #E91E63;
+    color: #fff;
+    letter-spacing: 2.5px;
+	transition:0.8 ease;
+}
+
+.banner-left a {
+    background: #e91e63;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    padding: 8px 35px;
+    border-radius: 4px;
+	transition:0.8 ease;
+
+}
+
+.banner-left a:hover{
+	letter-spacing:3px;
+	transition:0.8 ease;
+}
+
+.custom-btn:hover{
+	letter-spacing:3px;
+	transition:0.8 ease;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-shadow: 1px 2px #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link:hover {
+    color: #e91e63;
+}
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #e91e63;
+}
+
+.dropdown-menu {
+    padding: 0px;
+}
+span.navbar-toggler-icon {
+    background-image: url(https://i.ibb.co/1v9M0dZ/menu.png) !important;
+    width: 25px;
+    height: 25px;
+	cursor:pointer;
+}
+button.navbar-toggler:focus {
+    outline: none;
+}
+
+a.dropdown-item {
+    padding: 10px;
+    background: #515156;
+    color: #fff;
+}
+
+/* Mobile css media query */
+
+@media only screen and (max-width: 800px ){
+	.banner-left h1 {
+    color: red;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 35px;
+    text-shadow: 1px 2px #000;
+}
+.banner{
+  color: #FFF4E0;
+	padding:120px 0;
+	height: auto;
+}
+.banner-right {
+    margin-top: 30px;
+}
+
+.nav-color{
+	background:#000;
+}
+.navbar-light .navbar-nav .nav-link{
+	padding-left:0;
+}
+
+}
+</style>
+</head>
+
+<!-- OPTIONAL LINK: https://i.postimg.cc/bJrGLR1p/health-image.png -->
+<body style="background-image:url(https://wallpaperaccess.com/full/749813.jpg); background-size: cover;">
+    <header>  
+	<nav class="navbar container navbar-expand-lg navbar-light nav-color">
+	  <a style="font-size: 22px ; letter-spacing: 2px;"class="navbar-brand" href="#">MedWise: Your Healthmate</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+		<ul class="navbar-nav">
+		  <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+		  <li class="nav-item"> <a class="nav-link" href="#">Stores</a> </li>
+		   <li class="nav-item"> <a class="nav-link" href="#">Doctors</a> </li>
+		   <li class="nav-item"> <a class="nav-link" href="#">Features</a> </li>
+		   <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+           <li class="nav-item"> <a class="nav-link" href="#">Privacy Policy</a> </li>
+		   <li class="nav-item"> <a class="nav-link" href="#">Profile</a> </li>
+		</ul>
+	  </div>
+	 </nav>
+    </header>
+
+    <!-- END OF NAVIGATION BAR -->
+
+    <!-- START OF LANDING CONTENT -->
+    <div class="banner" >
+      <div class="banner-innner">
+	    <div class="container">
+		  <div class="row">
+		  
+		    <div class="col-md-7">
+			  <div class="banner-left">
+			    <h1 style="color: #FFF4E0; font-size: 50px; margin-bottom: 50px; letter-spacing: 10px; line-height: 1.2;"> Your all time ready health bot for any time distress</h1>
+				
+				<a href="#"> Contact </a>
+			  </div>
+			</div>
+			
+			
+			</div>
+			
+		  </div>
+		</div>
+	  </div>
+    </div>	
+
+    <!-- END OF LANDING CONTENT -->
+    <!-- START OF CHATBOT -->
+  <div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="
+                    https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/FFFFFF/external-bot-space-exploration-and-next-big-things-flatart-icons-outline-flatarticons-1.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">MedWise: </h4>
+                    <h4 class="chatbox__heading--header">Your Healthmate </h4>
+                    <p class="chatbox__description--header">I can assist you with your medical problems!</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                
+                <h4 style="margin-bottom: 160px; display:flex; flex-wrap:hard; font-size: 20px;">Enter 'medicines' to see what medicine types I can address with...</h4>
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <button style="font-weight: bolder ;font-size: 20px ;color: blueviolet; background: white; border-radius: 12px;"class="chatbox__send--footer send__button">Send</button>
+            </div>
+        </div>
+        <div style="padding-right: 150px; margin-top: 0;"class="chatbox__button">
+            <button style="padding: 30px"><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

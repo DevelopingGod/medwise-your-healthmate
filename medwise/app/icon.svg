@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background: rounded rectangle -->
+  <rect width="32" height="32" rx="6" ry="6" fill="#0F2854"/>
+
+  <!-- Medical cross: horizontal arm -->
+  <rect x="8" y="14" width="16" height="4" fill="#BDE8F5"/>
+
+  <!-- Medical cross: vertical arm -->
+  <rect x="14" y="8" width="4" height="16" fill="#BDE8F5"/>
+
+  <!-- Initials "MW" below cross -->
+  <text
+    x="16"
+    y="27"
+    font-family="Arial, sans-serif"
+    font-size="7"
+    font-weight="bold"
+    fill="white"
+    text-anchor="middle"
+  >MW</text>
+</svg>

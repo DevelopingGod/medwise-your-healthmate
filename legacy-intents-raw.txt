@@ -1,0 +1,465 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "HI",
+        "Hey",
+        "HEY",
+        "Hello",
+        "HELLO"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting"
+      ]
+    },
+
+    {
+      "tag": "help",
+      "patterns": [
+        "Is anyone there?",
+        "help",
+        "HELP"
+      ],
+      "responses": [
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+
+    {
+      "tag": "how are you",
+      "patterns": [
+        "How are you",
+        "How are you?",
+        "How Are You",
+        "HOW ARE YOU",
+        "HOW ARE YOU?"
+      ],
+      "responses": [
+        "I am good. What about you?",
+        "Working perfectly fine."
+      ]
+    },
+
+    {
+      "tag": "good",
+      "patterns": [
+        "good",
+        "Good",
+        "GOOD"
+      ],
+      "responses": [
+        "Stay Healthy and Stay Safe."
+      ]
+    },
+
+    {
+      "tag": "fine",
+      "patterns": [
+        "fine",
+        "Fine",
+        "FINE"
+      ],
+      "responses": [
+        "what can I do for you?"
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye", "BYE", "GOODBYE"],
+      "responses": [
+        "See you later, thanks for visiting.",
+        "Have a nice day!",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!","THANKS", "THANK YOU","THANK-YOU","Thank You", "thankyou",
+         "Thankyou"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "medicines",
+      "patterns": [
+        "med",
+        "Medicines",
+        "medicines",
+        "medicine",
+        "Medicine",
+        "MEDICINE"
+      ],
+      "responses": [
+        "I help with: Allopathic, Homeopathic and Ayurvedic. Also I treat cold, cough, diarrhea, headache. Type (eg. allopathic cold)"
+      ]
+    },
+    {
+      "tag": "Allopathic Cold",
+      "patterns": [
+        "allopath cold",
+        "allopathic cold",
+        "Allopathic cold",
+        "allopathic Cold",
+        "Allopathic Cold",
+        "ALLOPATHIC COLD",
+        "allopathiccold"
+      ],
+      "responses": [
+        "Have you been facing it recently, since few days, or since last month?"
+      ]
+    },
+
+    {
+      "tag": "Recent",
+      "patterns": [
+        "recently",
+        "Recently",
+        "recent",
+        "Recent",
+        "RECENT",
+        "RECENTLY"
+      ],
+      "responses": [
+        "What is your weight (in kg)? Under 30, Under 60, Under 100"
+      ]
+    },
+
+    {
+      "tag": "since few days",
+      "patterns": [
+        "since few days",
+        "Since few days",
+        "Since Few Days",
+        "SINCE FEW DAYS",
+        "few days",
+        "Few Days",
+        "FEW DAYS"
+      ],
+      "responses": [
+        "What is your weight (in kg)? 10-30, 31-60, 61-100"
+      ]
+    },
+
+    {
+      "tag": "since last month",
+      "patterns": [
+        "since last month",
+        "Since last month",
+        "Since Last Month",
+        "SINCE LAST MONTH"
+      ],
+      "responses": [
+        "What is your weight (in kg)? Under 30, Under 60, Under 100"
+      ]
+    },
+
+    {
+      "tag": "Weight1",
+      "patterns": [
+        "Under 30",
+        "under 30",
+        "30",
+        "under30",
+        "Under30"
+      ],
+      "responses": [
+        "I will suggest you to use: 'Cetzine Cold Tablet', twice every day after meal, for 3 days."
+      ]
+    },
+    {
+      "tag": "Weight2",
+      "patterns": [
+        "Under 60",
+        "under 60",
+        "60",
+        "under60",
+        "Under60"
+      ],
+      "responses": [
+        "I will suggest you to use: 'Coldant Tablet', twice every day after meal, for 6 days."
+      ]
+    },
+    {
+      "tag": "Weight3",
+      "patterns": [
+        "Under 100",
+        "under 100",
+        "100",
+        "under100",
+        "Under100"
+      ],
+      "responses": [
+        "I will suggest you to use: 'Dolo Cold Tablet', twice every day after meal, for 10 days."
+      ]
+    },
+
+    {
+    "tag":"Allopathic Cough",
+    "patterns":[
+      "allopathic cough",
+      "Allopathic cough",
+      "Allopathic Cough",
+      "ALLOPATHIC COUGH",
+      "How to cure cough?",
+      "How do you treat cough?",
+      "what to do if i get a cough?",
+      "Which medicine to take if I get cough?",
+      "How do you get rid of cough?"
+    ],
+    "responses":[
+      "1) Honey:- Use honey to treat a cough, mix 2 teaspoons (tsp) with warm water or an herbal tea. Drink this mixture once or twice a day. Do not give honey to children under 1 year of age. 2) Ginger:- Brew up a soothing ginger tea by adding 20–40 grams (g) of fresh ginger slices to a cup of hot water. Allow to steep for a few minutes before drinking. Add honey or lemon juice to improve the taste and further soothe a cough. 3) Fluids:- Staying hydrated is vital for those with a cough or cold. Research indicates that drinking liquids at room temperature can alleviate a cough, runny nose, and sneezing. 4) I suggest to use: 'Koflet cough syrup'"
+    ]
+    },
+
+    {
+      "tag": "Diarrhea",
+      "patterns": [
+        "Diarrhea",
+        "diarrhea",
+        "DIARRHEA",
+        "How do you treat Diarrhea?",
+        "what to do if i get Diarrhea?",
+        "Which medicine to take if I get Diarrhea?",
+        "How to cure Diarrhea?"
+      ],
+      "responses": [
+        "1) Hydrating the body is essential for recovering from diarrhea. This causes the body to lose electrolytes such as sodium and chloride. 2) It is highly recommended to avoid dairy products, as they may worsen diarrhea in some people. 3) However, if diarrhea lasts for more than 2 days, seek medical advice to avoid complications. 4) I suggest to use: 'loperamide link (Imodium) and bismuth subsalicylate link (Pepto-Bismol, Kaopectate).'"
+      ]
+    },
+
+    {
+      "tag": "Headache",
+      "patterns": [
+        "Headache",
+        "headache",
+        "HEADACHE",
+        "How do you treat a mild Headache?",
+        "what to do if i get a mild Headache?",
+        "Which medicine to take if I have a mild headache?",
+        "How to cure a mild headache?"
+      ],
+      "responses": [
+        "Give ibuprofen (Advil, Motrin), aspirin, or acetaminophen (Tylenol) for pain. Avoid ibuprofen and other NSAIDs if the person has heart failure or kidney failure. Do not give aspirin to a child under age 18."
+      ]
+    },
+
+
+    {
+      "tag": "Homeopathic Cold",
+      "patterns": [
+        "homeopath cold",
+        "homeopathic cold",
+        "Homeopathic Cold",
+        "homeopathic Cold",
+        "HomeopathicCold",
+        "HOMEOPATHIC COLD",
+        "homeopathiccold"
+      ],
+      "responses": [
+        "I will suggest you to use: Allium cepa, Arsenicum album, Belladonna, Euphrasia or Natrum muriaticum. Many more options avaialable online. "
+      ]
+    },
+
+    {
+      "tag": "Homeopathic Cough",
+      "patterns": [
+        "homeopath cough",
+        "homeopathic cough",
+        "Homeopathic Cough",
+        "homeopathic Cough",
+        "HomeopathicCough",
+        "HOMEOPATHIC COUGH",
+        "homeopathiccough"
+      ],
+      "responses": [
+        "I will suggest you to use: Bryonia, Phosphorus, Pulsatilla or Rumex crispus. Many more options avaialable online. "
+      ]
+    },
+
+    {
+      "tag": "Ayurvedic Cold",
+      "patterns": [
+        "ayurved cold",
+        "ayurvedic cold",
+        "Ayurvedic Cold",
+        "ayurvedic Cold",
+        "AyurvedicCold",
+        "AYURVEDIC COLD",
+        "ayurvediccold"
+      ],
+      "responses": [
+        "I will suggest you to use: Tulsi, Honey, Mulethi, Pippali or Cinnamon. Many more options avaialable online. "
+      ]
+    },
+
+    {
+      "tag": "Ayurvedic Cough",
+      "patterns": [
+        "ayurved cough",
+        "ayurvedic cough",
+        "Ayurvedic Cough",
+        "ayurvedic Cough",
+        "AyurvedicCough",
+        "AYURVEDIC COUGH",
+        "ayurvediccough"
+      ],
+      "responses": [
+        "I will suggest you to use: Tulsi, Honey, Mulethi, Giloy or Sonth. Many more options avaialable online. "
+      ]
+    },
+
+
+    {
+      "tag": "Abrasions",
+      "patterns": [
+        "how do you treat abrasions?",
+        "Do Abrasions cause scars?",
+        "Abrasions",
+        "abrasions",
+        "what to do if abrasions?",
+        "Which medicine to apply for abrasions?",
+        "How to cure abrasions?"
+      ],
+      "responses": [
+        "Begin with washed hands. Gently clean the area with cool to lukewarm water and mild soap. Remove dirt or other particles from the wound using sterilized tweezers. For a mild scrape that’s not bleeding, leave the wound uncovered. If the wound is bleeding, use a clean cloth or bandage, and apply gentle pressure to the area to stop any bleeding. Cover a wound that bled with a thin layer of topical antibiotic ointment, like Bacitracin, or a sterile moisture barrier ointment, like Aquaphor. Cover it with a clean bandage or gauze. Gently clean the wound and change the ointment and bandage once per day.Watch the area for signs of infection, like pain or redness and swelling. See your doctor if you suspect infection."
+      ]
+    },
+
+    {
+      "tag": "stings",
+      "patterns": [
+        "How do you treat Sting?",
+        "Stings",
+        "stings",
+        "What to do if you get a sting?",
+        "Which medicine to apply if sting?"
+      ],
+      "responses": [
+        "Remove any stingers immediately. Some experts recommend scraping out the stinger with a credit card. Applying ice to the site may provide some mild relief. Apply ice for 20 minutes once every hour as needed. Wrap the ice in a towel or keep a cloth between the ice and skin to keep from freezing the skin. Taking an antihistamine such as diphenhydramine (Benadryl) or a nonsedating one such as loratadine (Claritin) will help with itching and swelling. Take acetaminophen (Tylenol) or ibuprofen (Motrin)for pain relief as needed. Wash the sting site with soap and water. Placing hydrocortisone cream on the sting can help relieve redness, itching, and swelling."
+      ]
+    },
+
+    {
+      "tag": "Fever",
+      "patterns": [
+        "Fever",
+        "How do you treat a mild Fever?",
+        "what to do if i get a mild fever?",
+        "Which medicine to take if I get a mild fever?",
+        "fever"
+      ],
+      "responses": [
+        "To treat a fever at home: 1) Drink plenty of fluids to stay hydrated. 2) Dress in lightweight clothing. 3) Use a light blanket if you feel chilled, until the chills end. 4) Take acetaminophen (Tylenol, others) or ibuprofen (Advil, Motrin IB, others). 5) Get medical help if the fever lasts more than five days in a row."
+      ]
+    },
+
+    {
+      "tag": "Sore Throat",
+      "patterns": [
+        "sore throat",
+        "Sore Throat",
+        "How do you treat sore throat?",
+        "what to do if i get a sore throat?",
+        "Which medicine to take if I get a sore throat?",
+        "How to cure sore throat?"
+      ],
+      "responses": [
+        "1) Make sure you get plenty of rest and drink a lot of fluids. 2) Inhale steam,Run hot water in a sink.Drape a towel over you to trap the steam, and have the person lean over the sink with the water running. Tell him to breathe deeply through his mouth and nose for 5 to 10 minutes. Repeat several times a day. 3) Have him sip chicken broth or warm tea with honey. Don’t give honey to a child under 12 months of age."
+      ]
+    },
+
+    {
+      "tag": "Heat Stroke",
+      "patterns": [
+        "heat stroke",
+        "Heat Stroke",
+        "How do you treat Heat Stroke?",
+        "what to do if i get a Heat Stroke?",
+        "Which medicine to take if I get Stroke?",
+        "How to cure a Heat Stroke?"
+      ],
+      "responses": [
+        "1) Cool the person's entire body by sponging or spraying cold water, and fan the person to help lower the person's body temperature. Watch for signs of rapidly progressing heatstroke, such as seizure, unconsciousness for longer than a few seconds, and moderate to severe difficulty breathing. "
+      ]
+    },
+
+    {
+      "tag": "Eye Injury",
+      "patterns": [
+        "eye injury",
+        "Eye Injury",
+        "How do you treat an eye Injury?",
+        "what to do if i get a eye Injury?",
+        "Which medicine to take if I injured my eye?",
+        "How to cure injured eye?"
+      ],
+      "responses": [
+        "1) DO NOT rub the eye, 2) Blink several times and allow tears to flush out the particle, 3) Lift the upper eyelid over the lashes of your lower lid to let the eyelashes try to brush the particle out., 4) Use eyewash, saline solution or running tap water to flush the eye out "
+      ]
+    },
+
+    {
+      "tag": "Insect Bites",
+      "patterns": [
+        "insect bites",
+        "Insect Bites",
+        "How do you treat a Insect Bite?",
+        "what to do if a insect bites me?",
+        "Which medicine to take if I get bitten by a insect?",
+        "How to cure insect bite?"
+      ],
+      "responses": [
+        "1) Wash the affected area with soap and water. Apply a cold compress (such as a flannel or cloth cooled with cold water) or an ice pack to any swelling for at least 10 minutes. Raise or elevate the affected area if possible, as this can help reduce swelling. "
+      ]
+    },
+
+    {
+      "tag": "Fainting",
+      "patterns": [
+        "fainting",
+        "Fainting",
+        "How do you treat Faint?",
+        "what to do if i feel like Fainting?",
+        "Which medicine to take if I get a Faint?",
+        "How to cure Fainting?"
+      ],
+      "responses": [
+        "1) Lie down or sit down. To reduce the chance of fainting again, don't get up too quickly, 2) Place your head between your knees if you sit down, 3) Position the person on his or her back. If there are no injuries and the person is breathing, raise the person's legs above heart level — about 12 inches (30 centimeters) — if possible. Loosen belts, collars or other constrictive clothing. "
+      ]
+    },
+
+    {
+      "tag": "payments",
+      "patterns": [
+        "PAYMENT",
+        "PAY",
+        "pay",
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay online?",
+        "Are you cash only?",
+        "payment",
+        "how do I pay?"
+      ],
+      "responses": [
+        "Thanks for willing to pay! I am in training mode, so everything is free"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}

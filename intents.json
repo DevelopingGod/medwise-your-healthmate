@@ -1,0 +1,424 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hey"      
+      ],
+      "responses": [
+        "Hey there",
+        "Hello, hope you are doing good"
+      ]
+    },
+
+
+{
+      "tag": "ok",
+      "patterns": [
+        "ok",
+        "okay",
+        "okie"
+      ],
+      "responses": [
+        "Sure",
+        "No problem",
+        "Anytime"
+      ]
+    },
+
+
+ {
+      "tag": "help",
+      "patterns": [
+        "Is anyone there",
+        "help",
+         "who is there to help"
+      ],
+      "responses": [
+        "Hi there, I can help you for getting medicines",
+        "Hi there, medwise at your service."
+      ]
+    },
+
+
+{
+      "tag": "statask",
+      "patterns": [
+        "how are you"
+      ],
+      "responses": [
+        "I am good. Thank you",
+        "Working perfectly fine.",
+        "Up for 24 hours, 365 days, 52 weeks & 12 months right for you"
+      ]
+    },
+
+
+{
+      "tag": "statans",
+      "patterns": [
+        "good",
+        "fine",
+        "great",
+        "fantastic",
+        "amazing"
+      ],
+      "responses": [
+        "Stay Healthy and Stay Safe",
+        "That is wonderful to know, may you stay healthy",
+        "Alright",
+        "Do you need some medicine suggestion"
+      ]
+    },
+
+
+   {
+      "tag": "bid",
+      "patterns": [
+       "bye", 
+       "see you later", 
+       "goodbye"
+      ],
+      "responses": [
+        "Thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back if you face problem"
+      ]
+    },
+
+
+   {
+      "tag": "medicines",
+      "patterns": [
+        "med",
+        "medicine"
+      ],
+      "responses": [
+        "I help with: Allopathic, Homeopathic and Ayurvedic. Also I treat cold, cough, diarrhea, headache. Type (eg. allopathic cold)"
+      ]
+    },
+
+
+    {
+      "tag": "AllopathicCold",
+      "patterns": [
+        "allopath cold",
+        "allopathic cold",
+        "allopathiccold"
+      ],
+      "responses": [
+        "Have you been facing it recently, since few days, or since last month?"
+      ]
+    },
+
+
+{
+      "tag": "Recent",
+      "patterns": [
+        "recently",
+        "recent"
+      ],
+      "responses": [
+        "What is your weight (in kg)? Under 30, Under 60, Under 100"
+      ]
+},
+
+
+{
+      "tag": "underweight30",
+      "patterns": [
+        "Under 30",
+        "under 30"
+      ],
+      "responses": [
+        "I will suggest you to use: 'Cetzine Cold Tablet', twice every day after meal, for 2 days."
+      ]
+    },
+
+
+{
+      "tag": "weightunder60",
+      "patterns": [
+        "Under 60",
+        "under 60"
+      ],
+      "responses": [
+        "I will suggest you to use: 'Coldant Tablet', twice every day after meal, for 4 days."
+      ]
+    },
+
+
+{
+      "tag": "100underweight",
+      "patterns": [
+        "Under 100",
+        "under 100"
+      ],
+      "responses": [
+        "I will suggest you to use: 'Dolo Cold Tablet', twice every day after meal, for 4 days."
+      ]
+    },
+
+
+{
+      "tag": "Sincefewdays",
+      "patterns": [
+        "since few days",
+        "few days"
+      ],
+      "responses": [
+        "Please select your weight range (in kg): 1) till 40 2) till 70 3) till 100"
+      ]
+    },
+
+
+{
+      "tag": "till40",
+      "patterns": [
+       "till 40",
+      "Till 40"
+      ],
+      "responses": [
+        "You can get : 'Safexim Tablet', twice every day, for 5 days after your meal "
+      ]
+    },
+
+
+{
+      "tag": "till70",
+      "patterns": [
+       "till 70",
+        "Till 70"
+      ],
+      "responses": [
+        "You may use: 'Addelo Cold Tablet', twice every day, after meal for 7 days."
+      ]
+    },
+
+
+{
+      "tag": "till100",
+      "patterns": [
+       "till 100",
+        "Till 100"
+       ],
+      "responses": [
+        "You may use: 'Ciplenza Tablet', twice every day, after meal for 7 days."
+      ]
+    },
+
+
+{
+      "tag": "sincelastmonth",
+      "patterns": [
+        "since last month",
+        "Since last month"
+      ],
+      "responses": [
+        "I will suggest you to visit nearby doctor, as I am not trained enough for this long disease duration",
+       "Please seek doctor as early as possible to recover health soon"
+      ]
+    },
+
+
+{
+      "tag": "HomeopathyCold",
+      "patterns": [
+        "homeopathic cold",
+        "Homeopathic cold"
+      ],
+      "responses": [
+        "Did you start facing it today or since very long time"
+      ]
+    },
+
+
+ {
+      "tag": "Today",
+      "patterns": [
+        "today",
+        "Today"
+      ],
+      "responses": [
+        "Regardless of weight, the best suited solution for you will be 'Boiron Pulsatilla Pellets'. Dosage will be minimum 4 days, however, you may continue the consimption until complete relief. Kindly consume 1 pellet after 30 mins of meal."
+      ]
+    },
+
+
+{
+      "tag": "sincelong",
+      "patterns": [
+        "since very long time",
+        "Since very long time",
+          "long time"
+      ],
+      "responses": [
+        "Keeping your infection time thing in mind, I will suggest to use: 'Dr. Reckeweg Pulsatilla Dilution '. Dosage will be 6ml after 30-40 mins of meal, twice a day."
+      ]
+    },
+
+
+{
+    "tag":"AyurvedicCold",
+    "patterns":[
+      "ayurvedic cold",
+      "Ayurvedic cold"
+     ],
+    "responses":[
+      "1] Astragalus: The consumption and dosage will be best suited to activate your immune cells and recover you from cold. Follow dosage as per bottle. 2] Ginger and Tulsi tea: This will help you get relief from blocked nose in a very quick and effective manner. Tulsi will heal your internals."
+    ]
+    },
+
+
+{
+    "tag":"AyurvedicCough",
+    "patterns":[
+      "ayurvedic cough",
+      "Ayurvedic cough"
+    ],
+    "responses":[
+      "Honey: Use honey to treat a cough, mix 2 teaspoons (tsp) with warm water or an herbal tea. Drink this mixture once or twice a day. Keep for it till you get recovered completely", 
+      "Ginger: Brew up a soothing ginger tea by adding 20 – 40 grams (g) of fresh ginger slices to a cup of hot water. Allow to steep for a few minutes before drinking. Add honey or lemon juice to improve the taste and further soothe a cough", 
+      "I suggest to use: 'Koflet cough syrup'"
+    ]
+    },
+
+
+{
+      "tag": "Diarr",
+      "patterns": [
+        "Diarrhoea",
+        "diarrhoea",
+       "help for diarrhoea"
+      ],
+      "responses": [
+        "1) Hydrating the body is essential for recovering from diarrhea. This causes the body to lose electrolytes such as sodium and chloride. 2) It is highly recommended to avoid dairy products, as they may worsen diarrhea in some people. 3) However, if diarrhea lasts for more than 2 days, seek medical advice to avoid complications. 4) I suggest to use: 'loperamide link (Imodium) and bismuth subsalicylate link (Pepto-Bismol, Kaopectate).'"
+      ]
+    },
+
+
+{
+      "tag": "Headache",
+      "patterns": [
+        "Headache",
+        "headache",
+        "How do you treat a mild Headache?",
+        "what to do if i get a mild Headache?",
+        "Which medicine to take if I have a mild headache?",
+        "How to cure a mild headache?"
+      ],
+      "responses": [
+        "Give ibuprofen (Advil, Motrin), aspirin, or acetaminophen (Tylenol) for pain. Avoid ibuprofen and other NSAIDs if the person has heart failure or kidney failure. Do not give aspirin to a child under age 18."
+      ]
+    },
+
+
+ {
+      "tag": "Abrasions",
+      "patterns": [
+        "how do you treat abrasions?",
+        "Do Abrasions cause scars?",
+        "abrasion",
+        "what to do if abrasions?",
+        "Which medicine to apply for abrasions?",
+        "How to cure abrasions?"
+      ],
+      "responses": [
+        "Begin with washed hands. Gently clean the area with cool to lukewarm water and mild soap. Remove dirt or other particles from the wound using sterilized tweezers. For a mild scrape that’s not bleeding, leave the wound uncovered. If the wound is bleeding, use a clean cloth or bandage, and apply gentle pressure to the area to stop any bleeding. Cover a wound that bled with a thin layer of topical antibiotic ointment, like Bacitracin, or a sterile moisture barrier ointment, like Aquaphor. Cover it with a clean bandage or gauze. Gently clean the wound and change the ointment and bandage once per day.Watch the area for signs of infection, like pain or redness and swelling. See your doctor if you suspect infection."
+      ]
+    },
+
+
+{
+      "tag": "Stings",
+      "patterns": [
+        "How do you treat Sting?",
+        "stings",
+        "What to do if you get a sting?",
+        "Which medicine to apply if sting?"
+      ],
+      "responses": [
+        "Remove any stingers immediately. Some experts recommend scraping out the stinger with a credit card. Applying ice to the site may provide some mild relief. Apply ice for 20 minutes once every hour as needed. Wrap the ice in a towel or keep a cloth between the ice and skin to keep from freezing the skin.", "Taking an antihistamine such as diphenhydramine (Benadryl) or a nonsedating one such as loratadine (Claritin) will help with itching and swelling. Take acetaminophen (Tylenol) or ibuprofen (Motrin)for pain relief as needed.", 
+" Wash the sting site with soap and water. Placing hydrocortisone cream on the sting can help relieve redness, itching, and swelling."
+      ]
+    },
+
+
+{
+      "tag": "Fever",
+      "patterns": [
+        "How do you treat a mild Fever?",
+        "what to do if i get a mild fever?",
+        "Which medicine to take if I get a mild fever?",
+        "fever"
+      ],
+      "responses": [
+        "To treat a fever at home: 1) Drink plenty of fluids to stay hydrated.  2) Take acetaminophen (Tylenol, others) or ibuprofen (Advil, Motrin IB, others)."
+      ]
+    },
+
+
+{
+      "tag": "SoreThroat",
+      "patterns": [
+        "sore throat",
+        "How do you treat sore throat?",
+        "what to do if i get a sore throat?",
+        "Which medicine to take if I get a sore throat?",
+        "How to cure sore throat?"
+      ],
+      "responses": [
+        "1) Make sure you get plenty of rest and drink a lot of fluids. 2) Inhale steam,Run hot water in a sink.Drape a towel over you to trap the steam, and have the person lean over the sink with the water running. Tell him to breathe deeply through his mouth and nose for 5 to 10 minutes. Repeat several times a day.", "3) Have him sip chicken broth or warm tea with honey."
+      ]
+    },
+
+
+{
+      "tag": "HeatStroke",
+      "patterns": [
+        "heat stroke",
+        "How do you treat Heat Stroke?",
+        "what to do if i get a Heat Stroke?",
+        "Which medicine to take if I get Stroke?",
+        "How to cure a Heat Stroke?"
+      ],
+      "responses": [
+        "1) Cool the person's entire body by sponging or spraying cold water. Watch for signs of rapidly progressing heatstroke, such as seizure, unconsciousness for longer than a few seconds, and moderate to severe difficulty breathing. 2) Consumption of ORSL Rehydrate once the person is in senses will help a lot"
+      ]
+    },
+
+
+{
+      "tag": "payments",
+      "patterns": [
+        "pay",
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay online?",
+        "Are you cash only?",
+        "payment",
+        "how do I pay?"
+      ],
+      "responses": [
+        "Thanks for willing to pay! I am in training mode, so everything is free"
+      ]
+    },
+
+{
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?",
+        "jokes",
+        "Joke",
+        "joke"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison.", "Why are nurses afraid of the outdoors? Too much poison IV", "What do transplant nurses hate? Rejection", "Person: Troubles nurse...... Nurse:  Don’t mess with me—I get paid to poke people with very sharp objects.", "What did the nurse say to the man who fainted at the airport terminal?  I think you might have a terminal illness."
+      ]
+    } 
+  ]
+}

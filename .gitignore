@@ -1,0 +1,20 @@
+﻿# Python legacy
+venv/
+__pycache__/
+*.pth
+*.pyc
+get-pip.py
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# Next.js (inside medwise/)
+medwise/node_modules/
+medwise/.next/
+medwise/out/
+
+# OS
+.DS_Store
+Thumbs.db

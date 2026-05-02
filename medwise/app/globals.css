@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+:root {
+  --color-navy: #0F2854;
+  --color-royal: #1C4D8D;
+  --color-sky: #4988C4;
+  --color-ice: #BDE8F5;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0F2854;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(15, 40, 84, 0.1);
+}
+
+.dark {
+  --bg-primary: #0a0f1e;
+  --bg-secondary: #0F2854;
+  --bg-card: #1a2540;
+  --text-primary: #BDE8F5;
+  --text-secondary: #93c5fd;
+  --text-muted: #4988C4;
+  --border-color: #1C4D8D;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+/* CSS variable utility classes */
+.page-bg {
+  background-color: var(--bg-primary);
+}
+.surface {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+.text-main {
+  color: var(--text-primary);
+}
+.text-sub {
+  color: var(--text-secondary);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+.animate-delay-100 { animation-delay: 0.1s; opacity: 0; }
+.animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
+.animate-delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+/* Global scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4988C4 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4988C4;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1C4D8D;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #1C4D8D;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #4988C4;
+}
+
+@layer utilities {
+  .chat-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #4988C4 transparent;
+  }
+  .chat-scroll::-webkit-scrollbar {
+    width: 4px;
+  }
+  .chat-scroll::-webkit-scrollbar-thumb {
+    background-color: #4988C4;
+    border-radius: 2px;
+  }
+}
